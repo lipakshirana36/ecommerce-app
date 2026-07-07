@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-bone text-ink font-body;
+}
+
+.font-display {
+  font-family: "Fraunces", serif;
+}
+
+/* Signature element: rotated hang-tag price label on product cards */
+.price-tag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transform: rotate(-2deg);
+}
+
+.price-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #f6f3ec;
+  border: 1px solid currentColor;
+  margin-right: 6px;
+}
+
+::selection {
+  background-color: #d9a441;
+  color: #1b2430;
+}
+
+:focus-visible {
+  outline: 2px solid #5b7553;
+  outline-offset: 2px;
+}
