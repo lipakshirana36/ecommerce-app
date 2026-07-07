@@ -36,7 +36,7 @@ export default function Cart() {
             <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-xl" />
             <div className="flex-1">
               <p className="font-medium">{item.name}</p>
-              <p className="text-clay text-sm">${item.price.toFixed(2)}</p>
+              <p className="text-clay text-sm">₹{item.price.toFixed(2)}</p>
             </div>
             <select
               value={item.qty}
@@ -63,11 +63,11 @@ export default function Cart() {
         <div className="w-full sm:w-72 bg-white border border-ink/10 rounded-2xl p-5">
           <div className="flex justify-between text-sm mb-2">
             <span>Subtotal</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>₹{subtotal.toFixed(2)}</span>
           </div>
           <div className="flex justify-between text-sm mb-4 text-ink/60">
             <span>Shipping</span>
-            <span>{subtotal > 100 ? "Free" : "$10.00"}</span>
+            <span>{subtotal > 100 ? "Free" : "₹10.00"}</span>
           </div>
           <button
             onClick={handleCheckout}

@@ -47,7 +47,7 @@ export default function OrderDetail() {
             <span className="flex-1">
               {item.name} × {item.qty}
             </span>
-            <span>${(item.price * item.qty).toFixed(2)}</span>
+            <span>₹{(item.price * item.qty).toFixed(2)}</span>
           </div>
         ))}
         <div className="border-t border-ink/10 pt-2 flex justify-between">
@@ -56,7 +56,7 @@ export default function OrderDetail() {
         </div>
         <div className="flex justify-between font-semibold text-base">
           <span>Total</span>
-          <span>${order.totalPrice.toFixed(2)}</span>
+          <span>₹{order.totalPrice.toFixed(2)}</span>
         </div>
       </div>
     </div>

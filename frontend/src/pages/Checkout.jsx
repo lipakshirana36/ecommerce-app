@@ -32,7 +32,7 @@ export default function Checkout() {
         paymentMethod,
       });
       clearCart();
-      navigate(`/orders/${data._id}`);
+      navigate(`/orders/₹{data._id}`);
     } catch (err) {
       setError(err.response?.data?.message || "Could not place order");
     } finally {
@@ -75,7 +75,7 @@ export default function Checkout() {
                 <span>
                   {item.name} × {item.qty}
                 </span>
-                <span>${(item.price * item.qty).toFixed(2)}</span>
+                <span>₹{(item.price * item.qty).toFixed(2)}</span>
               </div>
             ))}
             <div className="border-t border-ink/10 pt-2 flex justify-between">
@@ -84,7 +84,7 @@ export default function Checkout() {
             </div>
             <div className="flex justify-between font-semibold text-base">
               <span>Total</span>
-              <span>${total.toFixed(2)}</span>
+              <span>₹{total.toFixed(2)}</span>
             </div>
           </div>
           {error && <p className="text-clay text-sm mt-3">{error}</p>}

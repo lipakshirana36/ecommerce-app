@@ -23,7 +23,7 @@ export default function Orders() {
         {orders.map((order) => (
           <Link
             key={order._id}
-            to={`/orders/${order._id}`}
+            to={`/orders/₹{order._id}`}
             className="flex items-center justify-between bg-white border border-ink/10 rounded-2xl p-4 hover:border-moss/40 transition-colors"
           >
             <div>
@@ -33,7 +33,7 @@ export default function Orders() {
             <span className="text-xs uppercase tracking-wide bg-moss/10 text-moss-dark px-3 py-1 rounded-full">
               {order.status}
             </span>
-            <span className="font-medium">${order.totalPrice.toFixed(2)}</span>
+            <span className="font-medium">₹{order.totalPrice.toFixed(2)}</span>
           </Link>
         ))}
       </div>
