@@ -26,7 +26,7 @@ export default function Home() {
         const { data } = await api.get("/products", {
           params: { keyword, category, sort },
         });
-        const { data } = await api.get("/products");
+        const { data:productData } = await api.get("/products");
           setProducts(data);
       } catch (err) {
         setError("Could not load products. Is the backend running?");
